@@ -379,18 +379,4 @@ justify-content: center;
 border-radius: 5px 5px 5px 5px;
 
 }
-@media only screen and (max-width: 700px) {
-    .T{
-        font-size: 45px;
-        font-family: raleway;
-        font-weight: normal;
-        width:90%;
-        margin-left:5%;
-        margin-right:5%;
-    }
-    .slideshow-container{max-height:1500px;
-        height:1500px;
-    }
-    
-    
-}
+
