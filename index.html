@@ -149,21 +149,6 @@ let dots = document.getElementsByClassName("dot");
 if (n > slides.length - 2) {slideIndex = 1}
 if (n < 1) {slideIndex = slides.length - 2}
 
-const mediaQuery = window.matchMedia('(max-width: 700px)')
-// Check if the media query is true
-if (mediaQuery.matches) {
-  // Then trigger an alert
-  for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-
-slides[slideIndex].style.display = "flex";
-dots[slideIndex-1].className += " active";
-
-}else{
     for (i = 0; i < slides.length; i++) {
 slides[i].style.display = "none";
 }
@@ -176,7 +161,7 @@ slides[slideIndex].style.display = "flex";
 slides[slideIndex+1].style.display = "flex";
 dots[slideIndex-1].className += " active";
 }
-}
+
 </script>
 <!-- java --------------------------------------------------------------------------------------------------- -->
 
