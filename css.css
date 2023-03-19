@@ -379,9 +379,9 @@ justify-content: center;
 border-radius: 5px 5px 5px 5px;
 
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     .T{
-        font-size: 30px;
+        font-size: 45px;
         font-family: raleway;
         font-weight: normal;
     }
