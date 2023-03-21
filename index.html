@@ -129,40 +129,6 @@ So please consider looking on the organizations listed below and Donate if you c
 
 <!-- java --------------------------------------------------------------------------------------------------- -->
 
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-let i;
-let slides = document.getElementsByClassName("mySlides");
-let dots = document.getElementsByClassName("dot");
-if (n > slides.length - 2) {slideIndex = 1}
-if (n < 1) {slideIndex = slides.length - 2}
-
-    for (i = 0; i < slides.length; i++) {
-slides[i].style.display = "none";
-}
-for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
-}
-
-slides[slideIndex-1].style.display = "flex";
-slides[slideIndex].style.display = "flex";
-slides[slideIndex+1].style.display = "flex";
-dots[slideIndex-1].className += " active";
-}
-
-</script>
 <!-- java --------------------------------------------------------------------------------------------------- -->
 
 <!-- Org --------------------------------------------------------------------------------------------------- -->
@@ -358,3 +324,48 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
 </body>
 
 </html>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    var z;
+    var x = screen.width
+    if (x < 1300){
+        var z = 0
+    }else{
+        var z = 2
+    }
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length - z) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length - z}
+
+        for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+    if (x > 1000){
+            slides[slideIndex-1].style.display = "flex";
+            slides[slideIndex].style.display = "flex";
+            slides[slideIndex+1].style.display = "flex";
+            dots[slideIndex-1].className += " active";
+        }else{
+            slides[slideIndex-1].style.display = "flex";
+            dots[slideIndex-1].className += " active";}
+    }
+    }
+
+</script>
