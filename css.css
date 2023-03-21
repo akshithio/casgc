@@ -387,13 +387,13 @@ border-radius: 5px 5px 5px 5px;
         width:90%;
       }
       .slideshow-container{
-        Zoom: 1.8;
+        Zoom: 1.5;
       }      
       .mySlides{
-        Zoom: 1.8;
+        Zoom: 1.5;
       }
       .prev,.next{
-        zoom:1.8;
+        zoom:1.5;
       }
       
     }    
