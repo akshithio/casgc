@@ -422,7 +422,7 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
         document.getElementById("TB").style.padding = "10px"
     }
   
-    var x = innerWidth ;
+    var x = isMobileDevice ;
     let slideIndex = 1;
     showSlides(slideIndex);
 
@@ -439,12 +439,12 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
     let i;
     var z;
     var c;
-    if (x > 600){
-        z = 2
-        c = 1
-    }else{
+    if (x){
         z = 0
         c = 0
+    }else{
+        z = 2
+        c = 1
     }
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
