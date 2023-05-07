@@ -72,27 +72,27 @@ Then we prepared our materials (presentations, instruments, and so on), and fina
 
 <div class="slideshow-container" id="SC">
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="1.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="2.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="3.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="4.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="5.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
-<div class="mySlides fade" id="MS" style="width:32%; height:100%; margin-left: 1%; margin-right: 1%;">
+<div class="mySlides fade" id="MS">
 <img src="6.jpg" style="width:100%; height:100%; object-fit:contain;">
 </div>
 
@@ -324,7 +324,46 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
 
 </html>
 <script>
-   
+    var x = innerWidth ;
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    var z;
+    var c;
+    if (x > 1000){
+        z = 2
+        c = 1
+    }else{
+        z = 0
+        c = 0
+    }
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length - 2) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length - 2}
+
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[slideIndex- c].style.display = "flex";
+    slides[slideIndex].style.display = "flex";
+    slides[slideIndex+ c].style.display = "flex";
+    }
+    for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+
+    }
+    }
 
 </script>
 <script>
@@ -347,7 +386,7 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
     if (isMobileDevice) {
         console.log("You are using a Mobile Device");
         document.getElementById("SC").style.height = "575px";
-        document.getElementById("SC").style.width = "100%";
+        document.getElementById("SC").style.width = "500px";
         document.getElementById("MS").style.height = "575px";
         document.getElementById("MS").style.width = "500px";
         document.getElementById("SC").style.justifyContent = "center";
@@ -371,6 +410,20 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
         document.getElementById("B3").style.fontSize = "30px";
         document.getElementById("Img").style.height = "200px";
         document.getElementById("Img").style.width = "300px";
+        document.getElementById("TA").style.width = "90%"
+        document.getElementById("TA").style.marginRight = "5%"
+        document.getElementById("TA").style.marginLeft = "5%"
+        document.getElementById("TA").style.padding = "0%"
+        document.getElementById("TB").style.width = "90%"
+        document.getElementById("TB").style.marginRight = "5%"
+        document.getElementById("TB").style.marginLeft = "5%"
+        document.getElementById("TB").style.padding = "0%"
+        /* 
+          padding: 10px;
+  margin-right: 15%;
+  margin-left: 15%;
+  width: 70%;
+  */
         
     } else {
         console.log("You are using Desktop");
@@ -381,8 +434,8 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
         document.getElementById("prev").style.width = "14px";
         document.getElementById("next").style.height = "50px";
         document.getElementById("next").style.width = "14px";
-        document.getElementById("next").style.right = "-12px";
-        document.getElementById("prev").style.left = "-12px";
+        document.getElementById("next").style.right = "0";
+        document.getElementById("prev").style.left = "0";
         document.getElementById("TA").style.fontSize = "18px";
         document.getElementById("TB").style.fontSize = "18px";
         document.getElementById("B1").style.height = "60px";
@@ -396,45 +449,16 @@ font-weight: bold; text-align: center;">International Baccalaureate</p>
         document.getElementById("B3").style.fontSize = "20px";
         document.getElementById("Img").style.height = "100px";
         document.getElementById("Img").style.width = "150px";
+        document.getElementById("SC").style.justifyContent = "center";
+        document.getElementById("SC").style.alignItems = "center";
+        document.getElementById("TA").style.width = "80%"
+        document.getElementById("TA").style.marginRight = "10%"
+        document.getElementById("TA").style.marginLeft = "10%"
+        document.getElementById("TA").style.padding = "10px"
+        document.getElementById("TB").style.width = "80%"
+        document.getElementById("TB").style.marginRight = "10%"
+        document.getElementById("TB").style.marginLeft = "10%"
+        document.getElementById("TB").style.padding = "10px"
     }
-   
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-    showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-    showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-    let i;
-    var z;
-    var c;
-    if (isMobileDevice){
-        z = 2
-        c = 1
-    }else{
-        z = 0
-        c = 0
-    }
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length - 2) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length - 2}
-
-    for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    slides[slideIndex- c].style.display = "flex";
-    slides[slideIndex].style.display = "flex";
-    slides[slideIndex+ c].style.display = "flex";
-    }
-    for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-
-    }
-    }
+  
   </script>
