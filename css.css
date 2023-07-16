@@ -1,39 +1,64 @@
-*{
-  text-decoration: none;
-  transition-duration: 0.1s;
-  
+  *{
+    text-decoration: none;
+    transition-duration: 0.1s;
+    
+    }
+  p{
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-decoration: inherit;
   }
 
-  html{
-  background-color: rgb(20, 54, 66);
-  }
+    body{
+      margin: 0%;
+      }
+
+    html{
+    background-color: rgb(20, 54, 66);
+    }
+
+
+
+  /*------------------------------------all------------------------------------------------------*/
+
+
+
+
+
+  /*------------------------------------header------------------------------------------------------*/
+
+      
+
+  
+
   .reference{
+    height: auto;
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
-  height: 60px;
   margin-top: 0px;
   padding: 0px;
-  
-  }
-  body{
-  margin: 0%;
-  }
-  
-  
-.Img{
+  background-color:  rgb(20, 54, 66);
+  width: 100%;
+  position: fixed;
+  z-index: 120;
   position: absolute;
-  left: 0;
   top: 0;
-}
+  }
+
+
   
+
   .button{
   background-color: rgb(20, 54, 66);
   color: white;
   border: none;
   text-decoration:underline; 
   text-decoration-thickness: 4px;
-  }
+}
+
+
   .home{ text-decoration-color:rgb(50, 110, 178);}
   .team{ text-decoration-color: rgb(233, 181, 39);}
   .donate{text-decoration-color: rgb(234, 80, 83);}
@@ -52,10 +77,140 @@
   background-color:  rgb(234, 80, 83);
   text-decoration-color:rgba(255, 255, 255, 0);
   color: rgb(255, 255, 255);
+
   }
-  
   /*------------------------------------header------------------------------------------------------*/
-  /*------------------------------------body------------------------------------------------------*/
+
+
+
+
+
+
+  /*------------------------------------Team------------------------------------------------------*/
+  .Contributers{
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    z-index: 124;
+    top: 0px;
+    left: 200px;
+    height: 580px;
+    width: auto;
+    min-width: 280px;
+    background-color: #000000b8;
+    color: aliceblue;
+    text-align: center;
+    justify-content: top;
+    font-weight: 900;
+    
+  }
+  .name1{
+
+    font-size: x-large;
+    font-family: raleway;
+    padding: 10px;
+    position: relative;
+  }
+  .name2{
+
+    font-size: 15px;
+    font-family: raleway;
+    padding: 10px;
+    position: relative;
+  }
+
+  .map1{
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 280px;
+  }
+
+  .fade-in {
+    animation-name: fade;
+    animation-duration: 1s;
+    }
+    
+    @keyframes fade {
+    from {display: none}
+    to {display: flex}
+    }
+
+    
+  .fade-out {
+    animation-name: fade;
+    animation-duration: 1s;
+    }
+    
+    @keyframes fade {
+    from {display: flex}
+    to {display: none}
+    }
+
+.Symbolmanager{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(10, 157, 121);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    min-height:100px;
+    width: 120px;
+    z-index: 100333;
+    text-align: center;
+    font-family: raleway;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.2s;
+    border-radius: 10px 0px 0px 10px ;
+
+}
+.linkibo{
+  text-decoration: none;
+  display: none;
+}
+.linkiboa{
+  text-decoration: none;
+  color: white;
+}
+.linkiboa:hover{
+  font-size: 16px;
+  color: rgb(85, 225, 158);
+}
+.Describtion{
+  display: flex;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(10, 157, 121);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  font-family: raleway;
+}
+  /*------------------------------------Team------------------------------------------------------*/
+  .Describtion:hover{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    background-color: rgb(17, 195, 150);
+    position: absolute;
+    bottom: 0;
+    font-family: raleway;
+    transition-duration: 0.2s;
+  }
+
+
+
+
+
+  
+  /*------------------------------------Title------------------------------------------------------*/
   .title{
   position: absolute;
   left: 0px;
@@ -66,32 +221,64 @@
   padding: 5px;
   height: 50px;
   width: 150px;
+  margin-top: 30px;
   background-color: rgb(20, 54, 66);
   color: rgb(255, 255, 255);
   }
-  
-  .TC{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content:center;
-  background-color: rgb(20, 54, 66);
-  }
-  .T{
 
-  text-align: left;
-  font-family: raleway;
-  font-weight: bold;
-  margin-top: 20px;
-  background-color: rgb(20, 54, 66);
-  color: white;
-  
-  
-  }
+  .h{
+    width: 100%;
+    background-color: rgb(20, 54, 66);
+    height: 150px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+
+    .HT{
+    font-family: raleway;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+
+    }
+
+    .line{
+      height: 27px;
+
+    }
+    
+    
+    .TC{ 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-color: rgb(20, 54, 66);
+    }
+    .T{
+
+    text-align: left;
+    font-family: raleway;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(20, 54, 66);
+    color: white;
+    
+    
+    }
   
   /*------------------------------------body------------------------------------------------------*/
+
   
+
+
   
   /* ______________________________________________________________________________________________________________ */
   
@@ -122,16 +309,17 @@
   position: relative;
   }
   .img-t{
-  height: 50%;
-  background-color: rgb(0, 0, 0);
+    height: 50%;
+  background-color: rgb(255, 255, 255);
   color: rgb(255, 255, 255);
   margin: 0%;
   border-radius: 5px 5px 0px 0px;
   border: 0%;
   }
   
-  .img{height: 100%;
+  .img{
   width: 100%;
+  height: 100%;
   border-radius: 5px 5px 0px 0px;
   object-fit: contain;
   background-color: white;
@@ -167,7 +355,6 @@
   margin: auto;
   box-sizing:border-box;
   }
-  
   /* Hide the images by default */
   .mySlides {
   display: none;
@@ -244,17 +431,9 @@
 
   
   /* Fading animation */
-  .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-  }
+
   
-  @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-  }
-  
-  
+
   /* ___________________________________________________________________________________________________*/
   
   .me{
@@ -305,30 +484,7 @@
   
 
   
-  .h{
-  width: 100%;
-  background-color: rgb(20, 54, 66);
-  height: 121px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  }
-  .HT{
-  font-family: raleway;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  margin: 0;
-  
-  }
-  .line{
-    height: 27px;
-  }
-  
-  
+
   .con{
   position: absolute;
   left: 0px;
@@ -363,4 +519,14 @@ P{
 }
  a{
   display: block;
+ }
+ .B-iframe{
+  position : absolute;
+  z-index : 66 ;
+   flex-direction:column;
+   display : none; 
+   left : 0 ; 
+   bottom : 0 ;
+   padding: 10px; 
+   background-color: rgba(0, 0, 0, 0.795);
  }
