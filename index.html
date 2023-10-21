@@ -369,31 +369,34 @@
 <div class="Costumer-CC">
     <p class="Costumer-message">Thank you User Number : <span id="userCount">Loading...</span> For visiting Us</p>
 
-    <script>
-        // Function to fetch the real-time user count from Google Analytics
+<script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-P2SYRK841Y');
+
+        // Function to fetch the real-time user count from GA4
         function fetchUserCount() {
-            gapi.client.analytics.data.realtime.get({
-                ids: 'ga:YOUR_VIEW_ID', // Replace with your View ID
-                metrics: 'rt:activeUsers'
-            }).then(function(response) {
-                var activeUsers = response.result.rows[0][0];
-                document.getElementById('userCount').textContent = activeUsers;
+            gtag('event', 'realtime', {
+                action: 'activeUsers'
             });
         }
 
-        // Load the Google Analytics library
-        gapi.load('client', function() {
-            gapi.client.init({
-                apiKey: 'YOUR_API_KEY' // Replace with your API key
-            }).then(function() {
-                fetchUserCount();
-                // Refresh user count every 60 seconds (adjust as needed)
-                setInterval(fetchUserCount, 60000);
-            });
+        // Fetch the user count on page load
+        fetchUserCount();
+
+        // Refresh user count every 60 seconds (adjust as needed)
+        setInterval(fetchUserCount, 60000);
+
+        // Listen for real-time event data
+        window.addEventListener('gtag.realtime', function(event) {
+            var activeUsers = event.detail[0].metricValues[0].value;
+            document.getElementById('userCount').textContent = activeUsers;
         });
     </script>
-
-    <script src="https://apis.google.com/js/client.js?onload=fetchUserCount"></script>
 
 </div>
 </body>
