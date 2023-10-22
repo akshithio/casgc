@@ -362,26 +362,26 @@
     <p class="Costumer-message" style="font-weight: bold;">Thank you User Number : <span id="userCount"  style="font-weight: bold;">Loading...</span> For visiting Us</p>
 
     <script>
-         function incrementAndRetrieveX() {
-            // Make an HTTP request to the server to increment 'x'
-            fetch('/increment-x', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
+        // Function to increment 'x' when the webpage loads
+        function incrementXAndDisplay() {
+            // Include the js.js file
+            var script = document.createElement('script');
+            script.src = 'js.js';
+            document.head.appendChild(script);
+            
+            // Once the script is loaded, access and update the 'x' variable
+            script.onload = function() {
+                if (typeof x !== 'undefined') {
+                    // Increment 'x' by one
+                    x += 1;
+                    // Update the message with the new 'x' value
+                    document.getElementById('userCount').textContent = x;
                 }
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Update the message with the new 'x' value received from the server
-                document.getElementById('userCount').textContent = data.x;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            };
         }
 
         // Call the function when the webpage is loaded
-        window.addEventListener('load', incrementAndRetrieveX);
+        window.addEventListener('load', incrementXAndDisplay);
     </script>
 
 
