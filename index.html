@@ -9,14 +9,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P2SYRK841Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P2SYRK841Y');
-</script>
 
 <body style= "padding-bottom: 30px;">
 
@@ -357,7 +349,7 @@
         </div>
 
     </div>
-
+    
 
 
 
@@ -369,34 +361,23 @@
 <div class="Costumer-CC">
     <p class="Costumer-message">Thank you User Number : <span id="userCount">Loading...</span> For visiting Us</p>
 
-<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
+    <script>
+         function incrementAndSaveX() {
+            // Retrieve 'x' from localStorage and increment it by one
+            let x = localStorage.getItem('x') || 0;
+            x = parseInt(x) + 1;
+            
+            // Store the updated 'x' back in localStorage
+            localStorage.setItem('x', x);
+            
+            // Update the message with the new 'x' value
+            document.getElementById('userCount').textContent = x;
         }
 
-        gtag('js', new Date());
-        gtag('config', 'G-P2SYRK841Y');
-
-        // Function to fetch the real-time user count from GA4
-        function fetchUserCount() {
-            gtag('event', 'realtime', {
-                action: 'activeUsers'
-            });
-        }
-
-        // Fetch the user count on page load
-        fetchUserCount();
-
-        // Refresh user count every 60 seconds (adjust as needed)
-        setInterval(fetchUserCount, 60000);
-
-        // Listen for real-time event data
-        window.addEventListener('gtag.realtime', function(event) {
-            var activeUsers = event.detail[0].metricValues[0].value;
-            document.getElementById('userCount').textContent = activeUsers;
-        });
+        // Call the function when the webpage is loaded
+        window.addEventListener('load', incrementAndSaveX);
     </script>
+
 
 </div>
 </body>
