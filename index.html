@@ -362,20 +362,26 @@
     <p class="Costumer-message" style="font-weight: bold;">Thank you User Number : <span id="userCount"  style="font-weight: bold;">Loading...</span> For visiting Us</p>
 
     <script>
-         function incrementAndSaveX() {
-            // Retrieve 'x' from localStorage and increment it by one
-            let x = localStorage.getItem('x') || 0;
-            x = parseInt(x) + 1;
-            
-            // Store the updated 'x' back in localStorage
-            localStorage.setItem('x', x);
-            
-            // Update the message with the new 'x' value
-            document.getElementById('userCount').textContent = x;
+         function incrementAndRetrieveX() {
+            // Make an HTTP request to the server to increment 'x'
+            fetch('/increment-x', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the message with the new 'x' value received from the server
+                document.getElementById('userCount').textContent = data.x;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
 
         // Call the function when the webpage is loaded
-        window.addEventListener('load', incrementAndSaveX);
+        window.addEventListener('load', incrementAndRetrieveX);
     </script>
 
 
