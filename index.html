@@ -361,21 +361,6 @@
 <div class="Costumer-CC">
     <p class="Costumer-message" style="font-weight: bold;">Thank you User Number : <span id="userCount"  style="font-weight: bold;">Loading...</span> For visiting Us</p>
 
-    <script>
-        function updateUserCount() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("usercount").textContent = this.responseText;
-                }
-            };
-            xhttp.open("GET", "updateUserCount.php", true);
-            xhttp.send();
-        }
-        
-        updateUserCount();
-    </script>
-
 
 </div>
 </body>
